@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Quiet Ledger</title>
+    <meta
+      name="description"
+      content="A philosophical horror experience exploring consciousness, memory, guilt, and the cost of being alive."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="hero">
+      <p class="eyebrow">philosophical horror archive</p>
+      <h1>The Quiet Ledger</h1>
+      <p class="lead">
+        Not gore. Not cheap edge. This is the horror of being conscious long enough to see your own logic
+        turn against you.
+      </p>
+      <div class="actions">
+        <button id="loadMoreBtn">Open another chamber</button>
+        <button id="modeBtn" class="ghost">Switch atmosphere</button>
+      </div>
+      <p class="meta">
+        Scroll. Read. Save what wounds you. There are thousands of entries and the ledger rewrites itself
+        every visit.
+      </p>
+    </header>
+
+    <main>
+      <section class="stats" aria-label="reading stats">
+        <article>
+          <span id="entryCount">0</span>
+          <p>entries witnessed</p>
+        </article>
+        <article>
+          <span id="savedCount">0</span>
+          <p>lines you kept</p>
+        </article>
+        <article>
+          <span>∞-like</span>
+          <p>procedural recombinations</p>
+        </article>
+      </section>
+
+      <section>
+        <div class="feed-header">
+          <h2>The Ledger</h2>
+          <p>Tap a card to pin it into memory.</p>
+        </div>
+        <div id="entryFeed" class="entry-feed" aria-live="polite"></div>
+      </section>
+
+      <section class="saved-wrap">
+        <h2>Scars You Chose</h2>
+        <p>Lines you decided not to let go of.</p>
+        <div id="savedFeed" class="saved-feed"></div>
+      </section>
+    </main>
+
+    <template id="entryTemplate">
+      <article class="entry-card">
+        <p class="entry-text"></p>
+        <div class="entry-footer">
+          <small class="entry-tag"></small>
+          <button class="save-btn" aria-label="save entry">Keep</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
